@@ -3,50 +3,34 @@
 import java.util.*;
 
 class Solution {
-    public List<List<Integer>> threeSum(int[] nums) {
-        List<List<Integer>> ans = new ArrayList<>();
+    List<List<Integer>> result = new ArrayList<>();
 
-        // Sort the array
-        Arrays.sort(nums);
-
-        for (int i = 0; i < nums.length - 2; i++) {
-            // Skip duplicate elements for i
-            if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
-            }
-
-            int j = i + 1;
-            int k = nums.length - 1;
-
-            while (j < k) {
-                int sum = nums[i] + nums[j] + nums[k];
-
-                if (sum == 0) {
-                    // Found a triplet with zero sum
-                    ans.add(Arrays.asList(nums[i], nums[j], nums[k]));
-
-                    // Skip duplicate elements for j
-                    while (j < k && nums[j] == nums[j + 1]) {
-                        j++;
-                    }
-
-                    // Skip duplicate elements for k
-                    while (j < k && nums[k] == nums[k - 1]) {
-                        k--;
-                    }
-
-                    // Move the pointers
-                    j++;
-                    k--;
-                } else if (sum < 0) {
-                    // Sum is less than zero, increment j to increase the sum
-                    j++;
-                } else {
-                    // Sum is greater than zero, decrement k to decrease the sum
-                    k--;
-                }
+    //3. 2 sum for n2 n3 with target as -n1 on remaining nums and avoid duplicates
+    private void twoSum(int[] nums, int target, int i, int j) {
+        while (i < j) {
+            if (nums[i] + nums[j] > target) j--;
+            else if (nums[i] + nums[j] < target) i++;
+            else {
+                while (i<j && nums[i] == nums[i+1]) i++;
+                while (i<j && nums[j] == nums[j-1]) j--;
+                result.add(Arrays.asList(-target, nums[i], nums[j]));
+                i++; j--;
             }
         }
-        return ans;
+    }
+
+    public List<List<Integer>> threeSum(int[] nums) {
+        int n = nums.length;
+        if (n<3) return result;
+       //1. Sort nums
+       Arrays.sort(nums);
+       //2. Set n1 as target and avoid duplicates 
+       for (int i=0; i<=n-3; i++) {
+           if (i>0 && nums[i] == nums[i-1]) continue;
+            int n1 = nums[i];
+            int target = -n1;
+            twoSum(nums, target, i+1, n-1);
+       }
+       return result;
     }
 }

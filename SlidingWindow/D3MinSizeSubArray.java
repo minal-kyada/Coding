@@ -4,19 +4,16 @@ package SlidingWindow;
 
 class Solution {
     public int minSubArrayLen(int target, int[] nums) {
-        
-        int left=0;
-        int right=0;
-        int sum=0;
-        int res=Integer.MAX_VALUE;
-
-        for(right=0;right<nums.length;right++){
-            sum+=nums[right];
-            while(sum>=target){
-                res=Math.min(res,right-left+1);
-                sum-=nums[left++];
+        int start = 0, end = 0, sum = 0;
+        int res = Integer.MAX_VALUE;
+        while(end<nums.length) {
+            sum+=nums[end++];
+            while (sum>=target) {
+                res = Math.min(res, end-start+1);
+                sum-=nums[start++];
             }
         }
-        return res==Integer.MAX_VALUE ? 0:res;
+        System.gc();
+        return res==Integer.MAX_VALUE?0:res;
     }
 }
