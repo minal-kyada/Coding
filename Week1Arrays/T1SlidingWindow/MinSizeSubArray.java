@@ -1,4 +1,4 @@
-package SlidingWindow;
+package Week1Arrays.T1SlidingWindow;
 
 // https://leetcode.com/problems/minimum-size-subarray-sum/submissions/1094940942/
 

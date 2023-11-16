@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/sort-colors/
-package TwoPointer;
+package Week1Arrays.T2TwoPointer;
 
 class Solution {
 

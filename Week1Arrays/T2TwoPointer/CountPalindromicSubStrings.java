@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/palindromic-substrings/
-package TwoPointer;
+package Week1Arrays.T2TwoPointer;
 
 class Solution {
     //Approach 1: DP

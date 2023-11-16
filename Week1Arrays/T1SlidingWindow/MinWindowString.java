@@ -1,4 +1,4 @@
-package SlidingWindow;
+package Week1Arrays.T1SlidingWindow;
 
 // https://leetcode.com/problems/minimum-window-substring/submissions/1093049139/
 // https://www.youtube.com/watch?v=3Bp3OVD1EGc

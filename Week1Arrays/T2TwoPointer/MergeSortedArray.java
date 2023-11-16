@@ -1,6 +1,6 @@
 // https://leetcode.com/problems/merge-sorted-array/
 
-package TwoPointer;
+package Week1Arrays.T2TwoPointer;
 
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
