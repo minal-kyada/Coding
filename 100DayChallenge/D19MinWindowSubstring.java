@@ -1,11 +1,8 @@
-package Week1Arrays.T1SlidingWindow;
-
-// https://leetcode.com/problems/minimum-window-substring/submissions/1093049139/
-// https://www.youtube.com/watch?v=3Bp3OVD1EGc
+// https://leetcode.com/problems/minimum-window-substring/
 
 class Solution {
     public String minWindow(String s, String t) {
-        // Approach Sliding Window problem
+        // Approach SLiding Window problem
 
         int ns = s.length();
         int ts = t.length();
