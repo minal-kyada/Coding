@@ -2,7 +2,7 @@
 
 class Solution {
     public String minWindow(String s, String t) {
-        // Approach SLiding Window problem
+        // Approach Sliding Window problem
 
         int ns = s.length();
         int ts = t.length();

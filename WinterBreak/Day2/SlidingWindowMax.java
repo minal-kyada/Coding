@@ -1,3 +1,5 @@
+package WinterBreak.Day2;
+
 //https://leetcode.com/problems/sliding-window-maximum/
 
 class Solution {
