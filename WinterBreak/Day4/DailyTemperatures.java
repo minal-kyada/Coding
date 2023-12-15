@@ -1,3 +1,5 @@
+package WinterBreak.Day4;
+
 // https://leetcode.com/problems/daily-temperatures/description/
 
 class Solution {
@@ -20,3 +22,4 @@ class Solution {
         return ans;
     }
 }
+
