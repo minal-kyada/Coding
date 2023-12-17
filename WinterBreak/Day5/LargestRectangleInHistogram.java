@@ -34,5 +34,22 @@ class Solution {
     }
 
     return maxArea;
-}
+
+    //Approach 2: Using Stack
+    // Stack<Integer> s = new Stack<>();
+    //     int result = 0;
+    //     int i = 0;
+    //     while (i<=heights.length) {
+    //         int height = i == heights.length ? 0 : heights[i];
+    //         if (s.isEmpty() || height >= heights[s.peek()]) {
+    //             s.push(i);
+    //             i++;
+    //         } else {
+    //             height = heights[s.pop()];
+    //             int width = s.isEmpty() ? i : i - s.peek() - 1;
+    //             result = Math.max(result, height*width);
+    //         }
+    //     }
+    //     return result;
+    // }
 }
