@@ -13,11 +13,18 @@ public class Codec {
 
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
-        if(root == null)
-            return "X,";
-        String lt = serialize(root.left);
-        String rt = serialize(root.right);
-        return root.val + "," + lt + rt;
+        StringBuilder sb = new StringBuilder();
+        serializeHelper(root, sb);
+        return sb.toString();
+    }
+    private void serializeHelper(TreeNode node, StringBuilder sb) {
+           if (node == null) {
+            sb.append("X").append(",");
+        } else {
+            sb.append(node.val).append(",");
+            serializeHelper(node.left, sb);
+            serializeHelper(node.right, sb);
+        }
     }
 
     // Decodes your encoded data to tree.
@@ -29,8 +36,7 @@ public class Codec {
 
     private TreeNode deSerializeHelper(Queue<String> q) {
         String val = q.poll();
-        if (val.equals("X"))
-            return null;
+        if (val.equals("X")) return null;
         TreeNode node = new TreeNode(Integer.valueOf(val));
         node.left = deSerializeHelper(q);
         node.right = deSerializeHelper(q);
